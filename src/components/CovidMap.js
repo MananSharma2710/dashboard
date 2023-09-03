@@ -41,9 +41,9 @@ const CovidMap = () => {
 
     return (
         <div className="covid-map h-screen">
-            <h2 className="text-2xl font-bold text-center mb-4">
+            <h1 className="text-2xl font-bold text-center mb-4">
                 COVID-19 World Map
-            </h2>
+            </h1>
             <MapContainer
                 center={[0, 0]}
                 zoom={2}

@@ -20,6 +20,7 @@ const CovidDashboard = () => {
                     'https://disease.sh/v3/covid-19/historical/all?lastdays=all'
                 );
                 setData(response.data);
+                console.log(Object.values(response.data.cases))
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching COVID-19 data:', error);
@@ -27,7 +28,6 @@ const CovidDashboard = () => {
         }
         fetchData();
     }, []);
-
     return (
         <div className="p-4 bg-white rounded shadow">
             {loading ? (
@@ -40,37 +40,12 @@ const CovidDashboard = () => {
                             label: 'Total Cases',
                             data: Object.values(data.cases),
                             borderColor: 'rgba(75, 192, 192)',
-                            borderWidth: 2,
+                            borderWidth: 1,
                             fill: false,
-                            tension: 0.1
                         },
                     ],
                 }}
-                    options={{
-                        responsive: true,
-                        scales: {
-                            x: {
-                                type: 'time',
-                                time: {
-                                    unit: 'day',
-                                    displayFormats: {
-                                        day: 'MMM D',
-                                    },
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'Date',
-                                },
-                            },
-                            y: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: 'Total Cases',
-                                },
-                            },
-                        },
-                    }} />
+                />
             )}
         </div>
     );

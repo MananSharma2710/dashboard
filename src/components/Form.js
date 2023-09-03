@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../redux/actions';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 const Form = () => {
@@ -10,6 +10,7 @@ const Form = () => {
         lastName: '',
         status: '',
     });
+    const Navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
@@ -29,6 +30,7 @@ const Form = () => {
           lastName: '',
           status: '',
         });
+        Navigate('/')
       };
       
 

@@ -9,6 +9,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { rootReducer } from './redux/reducers';
 import CovidMap from './components/CovidMap';
+import EditContact from './components/EditContact';
 
 
 const store = createStore(rootReducer);
@@ -25,6 +26,8 @@ function App() {
               <Route path="/form" element={<Form />} />
               <Route path='/chart-and-maps' element={<ChartandMaps />} />
               <Route path='/covid-map' element={<CovidMap />} />
+              <Route path="/edit/:id" element={<EditContact />}/>
+
             </Routes>
             {/* <div className="text-xl h-screen md:text-2xl font-bold">Main Content</div> */}
           </div>

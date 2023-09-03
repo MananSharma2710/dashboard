@@ -12,11 +12,6 @@ const Contact = () => {
         console.log(`Delete contact with ID ${id}`);
     };
 
-    // Handler to edit a contact
-    const onEditClick = (contact) => {
-
-    };
-
     return (
         <div className="w-full max-w-md mx-auto mt-10">
             <Link
@@ -54,7 +49,6 @@ const Contact = () => {
                             key={index}
                             contact={contact}
                             onDeleteClick={onDeleteClick}
-                            onEditClick={onEditClick}
                         />
                     ))
                 )}

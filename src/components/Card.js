@@ -1,14 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = ({ contact, onDeleteClick, onEditClick }) => {
-    const handleDelete = () => {
-        onDeleteClick(contact.id);
-      };
-    
-      const handleEdit = () => {
-        onEditClick(contact)
-      };
-    
+  const handleDelete = () => {
+    onDeleteClick(contact.id);
+  };
+
   return (
     <div className="border rounded p-4 mb-4">
       <div className="flex justify-between items-center">
@@ -20,10 +17,12 @@ const Card = ({ contact, onDeleteClick, onEditClick }) => {
         </div>
         <div>
           <button
-            onClick={handleEdit}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
           >
-            Edit
+            <Link to={`/edit/${contact.id}`}>
+              Edit
+            </Link>
+
           </button>
           <button
             onClick={handleDelete}

@@ -8,3 +8,9 @@ export const addContact = (contact) => ({
     type: 'DELETE_CONTACT',
     payload: id,
   });
+  export const updateContact = (updatedContact) => {
+    return {
+      type: 'UPDATE_CONTACT',
+      payload: updatedContact,
+    };
+  };
